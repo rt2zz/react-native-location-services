@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>575500D1-4FAB-4A93-97BA-89D58E748B32</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D830C1494D364A03C3D3FD96ED029C4521A5F3B9</key>
+		<string>github.com:rt2zz/proximity.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>apps/node_modules/react-native-location/RCTLocationServices.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D830C1494D364A03C3D3FD96ED029C4521A5F3B9</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:rt2zz/proximity.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D830C1494D364A03C3D3FD96ED029C4521A5F3B9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D830C1494D364A03C3D3FD96ED029C4521A5F3B9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>proximity</string>
+		</dict>
+	</array>
+</dict>
+</plist>
