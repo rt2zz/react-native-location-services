@@ -1,10 +1,8 @@
-var RCTDeviceEventEmitter = require('RCTDeviceEventEmitter')
-var RCTLocationServices = require('NativeModules').LocationServices
+import {NativeModules, DeviceEventEmitter} from 'react-native'
+var { LocationServices } = NativeModules
 var _ = require('lodash')
 
 var invariant = require('invariant')
-var logError = require('logError')
-var warning = require('warning')
 
 var subscriptions = []
 var geofenceCount = 0
@@ -25,7 +23,7 @@ var LocationServices = {
       typeof geo_success === 'function',
       'Must provide a valid geo_success callback.'
     )
-    RCTLocationServices.getCurrentPosition(
+    LocationServices.getCurrentPosition(
       geo_options || {},
       geo_success,
       geo_error || logError
@@ -34,7 +32,7 @@ var LocationServices = {
 
   watchPosition: function(success: Function, error?: Function, options?: GeoOptions): number {
     if (!updatesEnabled) {
-      RCTLocationServices.startObserving(options || {})
+      LocationServices.startObserving(options || {})
       updatesEnabled = true
     }
     var watchID = subscriptions.length
@@ -77,7 +75,7 @@ var LocationServices = {
 
   stopObserving: function() {
     if (updatesEnabled) {
-      RCTLocationServices.stopObserving()
+      LocationServices.stopObserving()
       updatesEnabled = false
       for (var ii = 0; ii < subscriptions.length; ii++) {
         var sub = subscriptions[ii]
@@ -101,11 +99,11 @@ var LocationServices = {
     var options = geofence
     options.identifier = identifier
     geofences[identifier] = options
-    RCTLocationServices.setGeofence(options)
+    LocationServices.setGeofence(options)
   },
 
   removeGeofence: function(id){
-    RCTLocationServices.removeGeofence(geofences[id])
+    LocationServices.removeGeofence(geofences[id])
     delete geofences[id]
     geofenceCount -= 1
   },
@@ -113,7 +111,7 @@ var LocationServices = {
   _listenForGeofenceEvents: function(){
     if(listeningForGeofenceEvents){ return }
     //clear out old geofences
-    RCTLocationServices.clearAllGeofences()
+    LocationServices.clearAllGeofences()
     listeningForGeofenceEvents = true
     RCTDeviceEventEmitter.addListener(
       'geofenceDidEnter',
@@ -143,11 +141,11 @@ var LocationServices = {
   },
 
   clearAllGeofences: function(){
-    RCTLocationServices.clearAllGeofences()
+    LocationServices.clearAllGeofences()
   },
 
   monitoredRegions: function(cb){
-    RCTLocationServices.monitoredRegions(cb)
+    LocationServices.monitoredRegions(cb)
   },
 
   isPositionMonitored: function(position){
